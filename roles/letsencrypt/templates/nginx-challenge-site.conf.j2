@@ -1,5 +1,5 @@
 server {
   listen 80;
-  server_name {{ missing_hosts | join(' ') }};
+  server_name {{ missing_hosts | map('enc_idna') | join(' ') }};
   include acme-challenge-location.conf;
 }

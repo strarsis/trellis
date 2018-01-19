@@ -15,6 +15,10 @@ def underscore(value):
     ''' Convert dots to underscore in a string '''
     return value.replace('.', '_')
 
+def enc_idna(value):
+    ''' IDNA-escapes a string '''
+    return value.encode('idna')
+
 class FilterModule(object):
     ''' Trellis jinja2 filters '''
 
@@ -22,4 +26,5 @@ class FilterModule(object):
         return {
             'to_env': to_env,
             'underscore': underscore,
+            'enc_idna': enc_idna,
         }
