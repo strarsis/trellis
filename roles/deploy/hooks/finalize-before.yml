@@ -1,5 +1,5 @@
 ---
-- name: Create file with multisite constants defined as false
+- name: Create file with multisite constants defined as null
   copy:
     src: "tmp_multisite_constants.php"
     dest: "{{ deploy_helper.shared_path }}/tmp_multisite_constants.php"
