@@ -72,6 +72,10 @@ http {
     "~^1:(?!GET|HEAD|OPTIONS)" 1;
   }
   {% endif -%}
+
+  {% if not sites_use_ssl or not nginx_rtt0_enabled %}
+  ssl_session_tickets off;
+  {% endif %}
   {% endblock %}
 
   {% block server_tokens -%}
